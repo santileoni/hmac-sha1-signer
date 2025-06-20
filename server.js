@@ -18,5 +18,9 @@ app.post('/api/sign', (req, res) => {
   res.json({ signature });
 });
 
+app.get('/api/sign', (req, res) => {
+  res.status(200).json({ message: 'HMAC Signer API is running' });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Signer API running on port ${PORT}`));
